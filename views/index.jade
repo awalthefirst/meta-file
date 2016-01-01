@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  .container
+    h1 Fcc File-Meta-Info Api 
+    h3 Usage: upload a file and submit
+    pre.alert.alert-success.
+      Response //
+      {
+        size: 11885,
+        name: 'avatar.png',
+        type: 'image/png',
+      }
+    .row
+      form(method="post", action='/' enctype="multipart/form-data")
+        input( id="uploadFile" placeholder="Choose File" disabled="disabled")
+        .fileUpload.btn.btn-primary
+          span Browse
+          input( id="uploadBtn" type="file" class="upload" name='file' required )
+        button.btn.btn-info(type='submit') upload
